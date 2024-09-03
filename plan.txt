@@ -1,43 +1,21 @@
-Tre måter variere HTML 
- - Variabel og if
-    let color;
-    if (number >= 0) {
-        color = 'red';
-    } else {
-        color = 'blue';
-    } 
- - Funksjon
-    function getColor() {
-        if (number >= 0) {
-            return 'red';
-        } else {
-            return 'blue';
-        }
-    } 
- - Ternary operator / nullish coalescing operator
-    let color = number >= 0 ? 'red' : 'blue';
+Litt til om skjemaer i MVC
+1: drop down
+2: "hjemmelagd" HTML
 
-Skjemaer i MVC
- - input tekst
- - input tall
- - input checkbox og radioknapp
- - drop down
- - "hjemmelagd" HTML
+3: Innebygd funksjonalitet for tall
+- Heltall vs desimaltall
+- Pluss, minus, gange, dele og parenteser - modulus
+- omgjøring
+  - tekst til tall: Number og parseInt inkludert forskjeller
+  - tall til tekst: ‘’+ toFixed() toLocaleString()
+- Math
+  - round, ceil og floor
+  - min og max
+  - random
 
-Innebygd funksjonalitet
-    Tall
-    - Heltall vs desimaltall
-    - Pluss, minus, gange, dele og parenteser - modulus
-    - omgjøring
-    - tekst til tall: Number og parseInt inkludert forskjeller
-    - tall til tekst: ‘’+ toFixed() toLocaleString()
-    - Math
-    - round, ceil og floor
-    - min og max
-    - random
-    eksempel: guess the number
+4: guess the number     
 
-    Tekst
+5: Innebygd funksjonalitet for tekst
     - charAt(), charCodeAt(), String.fromCharCode()
     - includes()
     - indexOf() og lastIndexOf()
@@ -48,11 +26,12 @@ Innebygd funksjonalitet
     - substr() og substring()
     - toLowerCase() og toUpperCase()
     - trim(), trimEnd() og trimStart()
-    eksempel: tallpuslespill
+    
+6: tallpuslespill uten løkke
+    
+7: løkker, snu en tekst
+    
+8: telle bokstaver i en tekst
 
-    Dato og klokkeslett
-    - Date-objekter
-    - ISO-string
-    - visnings-string
-    - millisekunder siden 1.1.1970
-    - telle dager, uker, osv
+9: tallpuslespill med løkke
+
