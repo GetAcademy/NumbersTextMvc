@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input, button{
+            font-size: 300%;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="app"></div>
+
+    <script>
+        // model
+        let secretNumber;
+        let guessedNumber = null;
+        let text = null;
+        let guessCount;
+
+        // view
+        function updateView(){
+            document.getElementById('app').innerHTML = /*HTML*/`
+                <div>${text ?? ''}</div>
+                <div>Du har gjettet ${guessCount} ganger.</div>
+                <input 
+                    type="number" 
+                    min="1" 
+                    max="100"
+                    step="1"
+                    oninput="guessedNumber=this.valueAsNumber"
+                    value="${guessedNumber ?? ''}"                    
+                    />
+                <button onclick="guess()">Gjett</button>
+                <button onclick="init()">Start på nytt</button>
+            `;
+        }
+
+        // controller
+        function init() {
+            guessCount = 0;
+            guessedNumber = null;
+            text = null;
+            const minValue = 1;
+            const maxValue = 100;
+            secretNumber = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+            updateView();
+        }
+
+        function guess(){
+            if(guessedNumber == secretNumber){
+                text = "Riktig!";
+            } else if(guessedNumber > secretNumber){
+                text = "For høyt";
+            } else {
+                text = "For lavt";
+            }
+            guessCount++;
+            updateView();
+        }
+
+    </script>
+</body>
+
+</html>

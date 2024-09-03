@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+        }
+
+        #app>div {
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 300%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Pause til 13:05</h1> -->
+    <div id="app"></div>
+
+    <script>
+        // model
+        let board = '73541 286';
+
+        // view
+        updateView();
+        function updateView() {
+            let cellsHtml = '';
+            for (let index = 0; index < board.length; index++) {
+                const character = board.charAt(index);
+                cellsHtml += `<div onclick="swap(${index})">${character}</div>`;
+            }
+            document.getElementById('app').innerHTML = cellsHtml;
+        }
+
+        // controller
+        function swap(index) {
+            const blankIndex = board.indexOf(' ');
+            if (!areNeighbours(index, blankIndex)) return;
+            const character = board.charAt(index);
+            board = board
+                .replace(' ', 'x')
+                .replace(character, ' ')
+                .replace('x', character);
+            updateView();
+        }
+
+        function areNeighbours(index1, index2) {
+            const rowIndex1 = Math.floor(index1 / 3);
+            const colIndex1 = index1 % 3;
+            const rowIndex2 = Math.floor(index2 / 3);
+            const colIndex2 = index2 % 3;
+            return rowIndex1 == rowIndex2 && Math.abs(colIndex2 - colIndex1) == 1
+                || colIndex1 == colIndex2 && Math.abs(rowIndex1 - rowIndex2) == 1;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Pause til 11:06</h1>
+    <div id="app"></div>
+
+    <script>            
+        // model
+        let number = -5;
+
+        // view
+        updateView();
+        function updateView() {
+            /*
+                Negative tall: blå
+                Positive tall: rød
+
+                Bredde på stolpe
+            */
+            document.getElementById('app').innerHTML = /*HTML*/`
+                Tallet er: ${number}<br/>
+
+                <input 
+                    type="range" 
+                    min="-20" 
+                    max="20" 
+                    step="1"
+                    onchange="number=this.valueAsNumber; updateView();"  
+                    value="${number}"              
+                    /><br/>
+                <input type="number"
+                    onchange="number=this.valueAsNumber; updateView();"  
+                    value="${number}"              
+                    /><br/>
+
+                <div style="width: ${getWidth()};background-color: ${getColor()}">x</div>
+                <button onclick="add()">+</button>
+            `;
+        }
+
+        function getWidth() {
+            if (number >= 0) {
+                return number + 'rem';
+            } else {
+                return -number + 'rem';
+            }
+        }
+
+        function getColor() {
+            if (number >= 0) {
+                return 'red';
+            } else {
+                return 'blue';
+            }
+        }
+
+        // controller
+        function add() {
+            number++;
+            updateView();
+        }
+
+    </script>
+</body>
+
+</html>

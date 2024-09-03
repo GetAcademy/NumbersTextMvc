@@ -1,0 +1,21 @@
+    Tekst
+    - charAt(), charCodeAt(), String.fromCharCode()
+    - includes()
+    - indexOf() og lastIndexOf()
+    - length
+    - repeat()
+    - replace() og replaceAll()
+    - startsWith() og endsWith()
+    - substr() og substring()
+    - toLowerCase() og toUpperCase()
+    - trim(), trimEnd() og trimStart()
+    eksempel1: tallpuslespill
+    eksempel2: løkker, snu en tekst
+    eksempel3: telle bokstaver i en tekst
+
+    Dato og klokkeslett
+    - Date-objekter
+    - ISO-string
+    - visnings-string
+    - millisekunder siden 1.1.1970
+    - telle dager, uker, osv
