@@ -29,11 +29,11 @@
 
             if(isDarkMode){
                 checboxHtml = /*HTML*/`
-                    <span onclick="isDarkMode = false; updateView();">☑</span>
+                    <span onclick="isDarkMode = false; updateView();" style="width: 20px; border: 10px solid black"></span>
                 `;
             } else {
                 checboxHtml = /*HTML*/`
-                    <span onclick="isDarkMode = true; updateView();">☐</span>                                   
+                    <span onclick="isDarkMode = true; updateView();">( )</span>                                   
                 `;
             }
 

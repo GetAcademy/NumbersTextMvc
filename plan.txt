@@ -13,7 +13,7 @@ Litt til om skjemaer i MVC
   - min og max
   - random
 
-4: guess the number     
+4: Guess the number     
 
 5: Innebygd funksjonalitet for tekst
     - charAt(), charCodeAt(), String.fromCharCode()
