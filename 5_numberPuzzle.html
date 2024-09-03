@@ -56,8 +56,10 @@
             // let board = '7354 1286';
             let blankIndex = board.indexOf(' ');
             let selectedNumber = board.charAt(index);
-            board = board.replace(' ', selectedNumber);
+            board = board.replace(' ', 'x');
             board = board.replace(selectedNumber, ' ');    
+            board = board.replace('x', selectedNumber);    
+
             updateView();
         }
 
